@@ -1,10 +1,25 @@
-import { pedirCartaHandler, plantarseHandler, reiniciarJuegoHandler, whatIfHandler } from './components/game';
+import {pedirCarta, plantarse, reiniciarPartida, whatIf, muestraPuntuacion} from "./ui";
 
-document.getElementById('pedirCarta')?.addEventListener('click', pedirCartaHandler);
-document.getElementById('plantarse')?.addEventListener('click', plantarseHandler);
-document.getElementById('reiniciar')?.addEventListener('click', reiniciarJuegoHandler);
-document.getElementById('whatIfButton')?.addEventListener('click', whatIfHandler);
+document.addEventListener("DOMContentLoaded", () => {
+    muestraPuntuacion();
+    const elementoPlantarse = document.getElementById('plantarse');
+    if (elementoPlantarse && elementoPlantarse instanceof HTMLButtonElement) {
+        elementoPlantarse.addEventListener('click', plantarse);
+    }
 
-document.addEventListener('DOMContentLoaded', () => {
-    reiniciarJuegoHandler(); // Inicializa el estado del juego
+    const elementoPedirCarta = document.getElementById('pedirCarta');
+    if (elementoPedirCarta && elementoPedirCarta instanceof HTMLButtonElement) {
+        elementoPedirCarta.addEventListener('click', pedirCarta);
+    }
+
+    const elementoReiniciarPartida = document.getElementById('reiniciar');
+    if (elementoReiniciarPartida && elementoReiniciarPartida instanceof HTMLButtonElement) {
+        elementoReiniciarPartida.addEventListener('click', reiniciarPartida);
+    }
+
+    const elementoWhatIf = document.getElementById('whatIfButton');
+    if (elementoWhatIf && elementoWhatIf instanceof HTMLButtonElement) {
+        elementoWhatIf.addEventListener('click', whatIf);
+    }
 });
+

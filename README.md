@@ -12,12 +12,14 @@ Pasos:
 
 ----------
 
-1. Las funciones están implícitas aquí:
-pedirCartaHandler y plantarseHandler.
+1. Función testeada:
+determinarEstadoJuego.
 
-2. Se crea el archivo utils/estadoJuego.ts para comprobar si se ha ganado o se ha perdido. Además crea el archivo utils/estadoJuego.test.ts para testear con describe, it, y expect. Se realizan 3 pruebas:
+2. Se crea el archivo /src/ui.test.ts para testear con describe, it, vi y expect. Se realizan 3 pruebas:
 - Puntuación menor a 7.5.
 - Puntuación de 7.5.
 - Puntuación mayor a 7.5.
 
-3. Se importa el módulo para testear la función desde ./estadoJuego
+3. Se importa vitest para testear:
+- import { determinarEstadoJuego } from './logica' 
+- import type { EstadoPartida } from './model'
