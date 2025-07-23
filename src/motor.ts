@@ -1,4 +1,5 @@
 import { partida } from "./model";
+import { EstadoPartida } from '../src/model';
 
 export const generarNumeroAleatorio = () => {
     return Math.floor(Math.random() * 10) + 1;
@@ -48,3 +49,9 @@ export const obtenerPuntosCarta = (carta: number) => {
 export const sumarPuntos = (punto: number) => {
     return partida.puntuacion + punto;
 };
+
+export function determinarEstadoJuego(puntuacion: number): EstadoPartida {
+  if (puntuacion > 7.5) return 'Has perdido';
+  if (puntuacion === 7.5) return 'Has ganado';
+  return 'Sigues jugando';
+}

@@ -1,6 +1,6 @@
 // src/ui.test.ts
 import { describe, it, expect } from 'vitest';
-import { determinarEstadoJuego } from './logica';
+import { determinarEstadoJuego } from './motor';
 import type { EstadoPartida } from './model';
 
 describe('determinarEstadoJuego', () => {
